@@ -2,7 +2,8 @@ from django.db.models.fields import NullBooleanField
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.views.generic import TemplateView, CreateView, ListView
-from .models import Customer
+from .models import Customer, Transaction
+from datetime import datetime
 # Create your views here.
 class HomePageView(TemplateView):
     template_name = 'home.html'
@@ -57,6 +58,8 @@ class TransferLogic(TemplateView):
                 self.isValid = True
                 fromAcc.balance -= self.a
                 toAcc.balance += self.a
+                
+                Transaction.objects.create(to_account=toAcc.account_no,from_account=fromAcc.account_no,transact_time=str(datetime.now()))
             else:
                 self.isValid = False
                 

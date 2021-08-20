@@ -11,3 +11,10 @@ class Customer(models.Model):
         return self.name
     def get_absolute_url(self):
         return reverse('home')
+
+class Transaction(models.Model):
+    to_account = models.CharField(max_length = 20)
+    from_account = models.CharField(max_length = 20)
+    transact_time = models.CharField(max_length = 500)
+    
+    
