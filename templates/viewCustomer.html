@@ -1,0 +1,53 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/table.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="banner">
+        <div class="navbar">
+            <img src="{% static 'images/logo.png' %}" class="logo">
+            <ul>
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'viewAllCustomers' %}">View All Customers</a></li>
+                    <li><a href="{% url 'transfer' %}">Transfer Money</a></li>
+                    <li><a href="#">About Us</a>
+                </ul>
+            </ul>
+        </div>
+        <h1>Our Customers</h1>
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>Account.no</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Balance</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {% for customer in customer_list %}
+                <tr>
+                    <td>{{ customer.account_no }}</td>
+                    <td>{{ customer.name }}</td>
+                    <td>{{ customer.email }}</td>
+                    <td>{{ customer.balance }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
