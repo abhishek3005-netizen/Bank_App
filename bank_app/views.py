@@ -59,7 +59,7 @@ class TransferLogic(TemplateView):
                 fromAcc.balance -= self.a
                 toAcc.balance += self.a
                 
-                Transaction.objects.create(to_account=toAcc.account_no,from_account=fromAcc.account_no,transact_time=str(datetime.now()))
+                Transaction.objects.create(to_account=toAcc.account_no,from_account=fromAcc.account_no,amount = self.a,transact_time=str(datetime.now()))
             else:
                 self.isValid = False
                 

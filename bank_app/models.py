@@ -15,6 +15,7 @@ class Customer(models.Model):
 class Transaction(models.Model):
     to_account = models.CharField(max_length = 20)
     from_account = models.CharField(max_length = 20)
+    amount = models.IntegerField()
     transact_time = models.CharField(max_length = 500)
     
     
