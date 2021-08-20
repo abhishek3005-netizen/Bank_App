@@ -1,0 +1,85 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Western Bank</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="banner">
+        <div class="navbar">
+            <img src="{% static 'images/logo.png' %}" class="logo">
+            <ul>
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'viewAllCustomers' %}">View All Customers</a></li>
+                    <li><a href="{% url 'transfer' %}">Transfer Money</a></li>
+                    <li><a href="#">About Us</a>
+                </ul>
+            </ul>
+        </div>
+
+        <div class="content">
+            <h1>Western Bank Of Chicago</h1>
+            <p>Relationships Beyond Banking<br>If banks can not truly be intimate they are doomed to be just dumb
+                commodities,acting behind the scenes like utilities</p>
+            <div>
+                <button type="button" class="header-button"><a href="{% url 'createUser' %}">REGISTER</a></button>
+            </div>
+        </div>
+    </div>
+    <section class="aboutus" id="aboutus">
+        <div class="content-about">
+            <h2>About Us</h2>
+            <p>
+                Western Bank a Fortune 500 company, is an American Multinational, Public Sector Banking and Financial
+                services statutory body headquartered in Chicago.<br>The rich heritage and legacy of over 200 years,
+                accredits Western Bank as the most trusted Bank by Americans through generations.
+
+                Western Bank, the largest American Bank with 1/4th market share, serves over 45 crore customers through
+                its vast network of over 22,000 branches, 62617 ATMs/ADWMs, 71,968 BC outlets, with an undeterred focus
+                on innovation, and customer centricity, which stems from the core values of the Bank - Service,
+                Transparency, Ethics, Politeness and Sustainability.
+
+                The Bank has successfully diversified businesses through its various subsidiaries i.e SBI General
+                Insurance, SBI Life Insurance, SBI Mutual Fund, SBI Card, etc. It has spread its presence globally and
+                operates across time zones through 229 offices in 31 foreign countries.
+
+                Growing with times, SBI continues to redefine banking in India, as it aims to offer responsible and
+                sustainable Banking solutions..
+                The origin of the Western Bank of Chicago goes back to the first decade of the nineteenth century with
+                the establishment of the Bank of America in New York on 2 June 1806.<br>
+                Three years later the bank received its charter and was re-designed as the (2 January 1809).<br>
+                A unique institution, it was the first joint-stock bank of British sponsored by the American Congress.
+                The Bank of America (15 April 1840) and the Bank of Texas (1 July 1843) followed the Bank of Bengal.<br>
+                These three banks remained at the apex of modern banking in America till their amalgamation as the
+                Imperial Bank of America on 27 January 1921.
+            </p>
+        </div>
+        <img src="{% static 'images/about.jpg'%}" alt="">
+    </section>
+    <section class="footer">
+        <div class="footer-content">
+            <h3>The Western Bank Of Chicago</h3>
+            <p>Please visit the following tags to get more insight into how we function and please follow us on the
+                below handles</p>
+            <ul class="socials">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom" style="height:2em;">
+            <p>copyright &copy;2021. designed by The Western Bank</p>
+        </div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Payment Checkout Form</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css">
+    <link rel="stylesheet" href="{% static 'css/transferMoney.css'%}">
+    <link rel="stylesheet" href="{% static 'css/navbar.css'%}">
+
+</head>
+
+<body>
+    <div class="navbar">
+        <img src="{% static 'images/logo.png' %}" class="logo">
+        <ul>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'viewAllCustomers' %}">View All Customers</a></li>
+                <li><a href="{% url 'transfer' %}">Transfer Money</a></li>
+                <li><a href="#">About Us</a>
+            </ul>
+        </ul>
+    </div>
+
+
+
+    <div class="wrapper">
+        <div class="payment">
+            <div class="payment-logo">
+                <p>p</p>
+            </div>
+
+
+            <h2>Money Transfer Gateway</h2>
+            <div class="form">
+                <form action="{% url 'logic'%}">
+                    <div class="card space icon-relative">
+                        <label class="label">To Account:</label>
+                        <input type="text" class="input" name="toAcc">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="card space icon-relative">
+                        <label class="label">From Account:</label>
+                        <input type="text" class="input" name="fromAcc">
+                        <i class="far fa-user"></i>
+                    </div>
+                    <div class="card-item icon-relative">
+                        <label class="label">Amount</label>
+                        <input type="number" class="input" name="amount">
+                        <i class="fas fa-rupee-sign"></i>
+                    </div>
+
+                    <div class="btn">
+                        <input type="submit" value="Pay">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

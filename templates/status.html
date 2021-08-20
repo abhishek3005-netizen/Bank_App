@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/status.css' %}">
+    <title>Status</title>
+</head>
+
+<body>
+    {% if valid %}
+    <div class="wrapper">
+        <h2>The Transaction was SUCCESSFUL</h2>
+        <div>
+            <img src="{% static 'images/success.svg' %}" alt="success">
+        </div>
+    </div>
+    {% else %}
+    <div class="wrapper">
+        <h2>The Transaction was UNSUCCESSFUL</h2>
+        <div>
+            <img src="{% static 'images/close.png' %}" alt="success">
+        </div>
+        <h4>Kindly RECHECK the Transaction entries</h4>
+    </div>
+    {% endif %}
+    <div>
+        <a href="{%url 'home' %}">
+            <button class="main-btn">Back To Home Page</button>
+        </a>
+    </div>
+
+</body>
+
+</html>
